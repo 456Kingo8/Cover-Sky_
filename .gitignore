@@ -1,0 +1,13 @@
+bin/
+obj/
+Properties/
+/packages/
+riderModule.iml
+/_ReSharper.Caches/
+.*
+.idea
+!.github
+!.gitignore
+!.gitattributes
+*.sln
+*.sln*

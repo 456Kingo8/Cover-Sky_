@@ -1,0 +1,12 @@
+{
+    "name": "Example-Mod",
+    "author": "Inmny",
+    "version": "1.0.0",
+    "description": "An example mod for NeoModLoader.",
+    "iconPath": "icon.png",
+    "Dependencies": [],
+    "OptionalDependencies": [
+        "一米.中文名"
+    ],
+    "IncompatibleWith": []
+}
