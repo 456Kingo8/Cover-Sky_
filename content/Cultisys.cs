@@ -11,6 +11,7 @@ namespace ZheTian.content
     internal class Cultisys
     {
         public const int MaxLevel = 15;
+        private const int pai = 3;
         private static readonly BaseStats[] _level_stats;
         private static readonly float[] _level_exp_required;
 
@@ -29,19 +30,19 @@ namespace ZheTian.content
             _level_stats = new BaseStats[MaxLevel + 1];
             _level_exp_required = new float[MaxLevel];
             for (var i = 0; i <= MaxLevel; i++) _level_stats[i] = new BaseStats();
-
-            _level_exp_required[0] = 100;
-            _level_exp_required[1] = 200;
-            _level_exp_required[2] = 400;
-            _level_exp_required[3] = 1000;
-            _level_exp_required[4] = 2000;
-            _level_exp_required[5] = 2000;
-            _level_exp_required[6] = 3000;
-            _level_exp_required[7] = 3000;
-            _level_exp_required[8] = 4000;
-            _level_exp_required[9] = 5000;
+            _level_exp_required[0] = 500;
+            _level_exp_required[1] = 1000;
+            _level_exp_required[2] = 2000;
+            _level_exp_required[3] = 4000;
+            _level_exp_required[4] = 9000;
+            _level_exp_required[5] = 4000;
+            _level_exp_required[6] = 4000;
+            _level_exp_required[7] = 25000;
+            _level_exp_required[8] = 9000;
+            _level_exp_required[9] = 9000;
             _level_exp_required[10] = 10000;
-            _level_exp_required[11] = 100000;
+            _level_exp_required[11] = 50000;
+            _level_exp_required[12] = 100000;
             LevelExpRequired = new ReadOnlyCollection<float>(_level_exp_required);
             LevelStats = new ReadOnlyCollection<BaseStats>(_level_stats);
 
@@ -51,148 +52,110 @@ namespace ZheTian.content
 
 
             stats = _level_stats[1];
-            stats[Stats.zheTianAir.id] = 50; // 初始值
-            stats[Stats.zheTianAir_regen.id] = 1; // 初始值
-            stats[S.health] = 200; // 初始值
-            stats[S.damage] = 40; // 初始值
+            stats[Stats.zheTianAir.id] = 50; 
+            stats[Stats.zheTianAir_regen.id] = 1; 
+            stats[S.health] = pai * Factorial(1); 
+            stats[S.damage] = 20; 
             stats[S.max_age] = 150;
-            stats[S.mod_armor] = 0; // 初始值
-            stats[S.mod_crit] = 0; // 初始值
-            stats[S.mod_damage] = 0; // 初始值
-            stats[S.mod_health] = 0; // 初始值
-            stats[S.mod_speed] = 0; // 初始值
-            stats[S.mod_attack_speed] = 0; // 初始值
+            stats[S.mod_armor] = 0;
+            stats[S.mod_crit] = 0; 
+            stats[S.mod_damage] = 0; 
+            stats[S.mod_health] = 0; 
+            stats[S.mod_speed] = 0; 
+            stats[S.mod_attack_speed] = 0; 
 
             stats = _level_stats[2];
-            stats[Stats.zheTianAir.id] = 100;  // 增加 50
-            stats[Stats.zheTianAir_regen.id] = 2; // 增加 1
-            stats[S.health] = 400; // 翻倍
-            stats[S.damage] = 80; // 翻倍
-            stats[S.max_age] = 500;
-            stats[S.mod_armor] = 5;
-            stats[S.mod_crit] = 5;
-            stats[S.mod_damage] = 10;
-            stats[S.mod_health] = 10;
-            stats[S.mod_speed] = 2;
-            stats[S.mod_attack_speed] = 0.05f;
+            stats[Stats.zheTianAir.id] = 100;  
+            stats[Stats.zheTianAir_regen.id] = 2; 
+            stats[S.health] = pai * Factorial(2); 
+            stats[S.damage] = 50;
+            stats[S.max_age] = 300;
+
 
             stats = _level_stats[3];
-            stats[Stats.zheTianAir.id] = 150; // 增加 50
-            stats[Stats.zheTianAir_regen.id] = 3; // 增加 1
-            stats[S.health] = 800; // 翻倍
-            stats[S.damage] = 160; // 翻倍
-            stats[S.max_age] = 800;
-            stats[S.mod_armor] = 10;
-            stats[S.mod_crit] = 10;
-            stats[S.mod_damage] = 20;
-            stats[S.mod_health] = 20;
-            stats[S.mod_speed] = 4;
-            stats[S.mod_attack_speed] = 0.1f;
+            stats[Stats.zheTianAir.id] = 150; 
+            stats[Stats.zheTianAir_regen.id] = 3; 
+            stats[S.health] = pai * Factorial(3); 
+            stats[S.damage] = 100; 
+            stats[S.max_age] = 500;
+
 
             stats = _level_stats[4];
-            stats[Stats.zheTianAir.id] = 200; // 增加 50
-            stats[Stats.zheTianAir_regen.id] = 4; // 增加 1
-            stats[S.health] = 1600; // 翻倍
-            stats[S.damage] = 320; // 翻倍
-            stats[S.max_age] = 1000;
-            stats[S.mod_armor] = 15;
-            stats[S.mod_crit] = 15;
-            stats[S.mod_damage] = 30;
-            stats[S.mod_health] = 30;
-            stats[S.mod_speed] = 6;
-            stats[S.mod_attack_speed] = 0.15f;
+            stats[Stats.zheTianAir.id] = 200; 
+            stats[Stats.zheTianAir_regen.id] = 4; 
+            stats[S.health] = pai * Factorial(4); 
+            stats[S.damage] = 150; 
+            stats[S.max_age] = 800;
+
 
             stats = _level_stats[5];
-            stats[Stats.zheTianAir.id] = 250; // 增加 50
-            stats[Stats.zheTianAir_regen.id] = 5; // 增加 1
-            stats[S.health] = 3200; // 翻倍
-            stats[S.damage] = 640; // 翻倍
-            stats[S.max_age] = 1500;
-            stats[S.mod_armor] = 20;
-            stats[S.mod_crit] = 20;
-            stats[S.mod_damage] = 40;
-            stats[S.mod_health] = 40;
-            stats[S.mod_speed] = 8;
-            stats[S.mod_attack_speed] = 0.2f;
+            stats[Stats.zheTianAir.id] = 250; 
+            stats[Stats.zheTianAir_regen.id] = 5; 
+            stats[S.health] = pai * Factorial(5); 
+            stats[S.damage] = 400; 
+            stats[S.max_age] = 1000;
+
 
             stats = _level_stats[6];
-            stats[Stats.zheTianAir.id] = 300; // 增加 50
-            stats[Stats.zheTianAir_regen.id] = 6; // 增加 1
-            stats[S.health] = 6400; // 翻倍
-            stats[S.damage] = 1280; // 翻倍
-            stats[S.max_age] = 2500;
-            stats[S.mod_armor] = 25;
-            stats[S.mod_crit] = 25;
-            stats[S.mod_damage] = 50;
-            stats[S.mod_health] = 50;
-            stats[S.mod_speed] = 10;
-            stats[S.mod_attack_speed] = 0.25f;
+            stats[Stats.zheTianAir.id] = 300; 
+            stats[Stats.zheTianAir_regen.id] = 6; 
+            stats[S.health] = pai * Factorial(6); 
+            stats[S.damage] = 600; 
+            stats[S.max_age] = 1500;
 
             stats = _level_stats[7];
-            stats[Stats.zheTianAir.id] = 350; // 增加 50
-            stats[Stats.zheTianAir_regen.id] = 7; // 增加 1
-            stats[S.health] = 12800; // 翻倍
-            stats[S.damage] = 2560; // 翻倍
-            stats[S.max_age] = 3000;
-            stats[S.mod_armor] = 30;
-            stats[S.mod_crit] = 30;
-            stats[S.mod_damage] = 60;
-            stats[S.mod_health] = 60;
-            stats[S.mod_speed] = 12;
-            stats[S.mod_attack_speed] = 0.3f;
+            stats[Stats.zheTianAir.id] = 350; 
+            stats[Stats.zheTianAir_regen.id] = 7; 
+            stats[S.health] = pai * Factorial(7); 
+            stats[S.damage] = 1400; 
+            stats[S.max_age] = 2500;
+
 
             stats = _level_stats[8];
-            stats[Stats.zheTianAir.id] = 400; // 增加 50
-            stats[Stats.zheTianAir_regen.id] = 8; // 增加 1
-            stats[S.health] = 25600; // 翻倍
-            stats[S.damage] = 5120; // 翻倍
-            stats[S.max_age] = 4000;
-            stats[S.mod_armor] = 35;
-            stats[S.mod_crit] = 35;
-            stats[S.mod_damage] = 70;
-            stats[S.mod_health] = 70;
-            stats[S.mod_speed] = 14;
-            stats[S.mod_attack_speed] = 0.35f;
-
+            stats[Stats.zheTianAir.id] = 400; 
+            stats[Stats.zheTianAir_regen.id] = 8; 
+            stats[S.health] = pai * Factorial(8); 
+            stats[S.damage] = 2000; 
+            stats[S.max_age] = 3000;
+            
             stats = _level_stats[9];
-            stats[Stats.zheTianAir.id] = 450; // 增加 50
-            stats[Stats.zheTianAir_regen.id] = 9; // 增加 1
-            stats[S.health] = 51200; // 翻倍
-            stats[S.damage] = 10240; // 翻倍
-            stats[S.max_age] = 5000;
-            stats[S.mod_armor] = 40;
-            stats[S.mod_crit] = 40;
-            stats[S.mod_damage] = 80;
-            stats[S.mod_health] = 80;
-            stats[S.mod_speed] = 16;
-            stats[S.mod_attack_speed] = 0.4f;
+            stats[Stats.zheTianAir.id] = 450; 
+            stats[Stats.zheTianAir_regen.id] = 9; 
+            stats[S.health] = pai * Factorial(9);
+            stats[S.damage] = 3600;
+            stats[S.max_age] = 4000;
 
             stats = _level_stats[10];
-            stats[Stats.zheTianAir.id] = 500; // 增加 50
-            stats[Stats.zheTianAir_regen.id] = 10; // 增加 1
-            stats[S.health] = 102400; // 翻倍
-            stats[S.damage] = 20480; // 翻倍
-            stats[S.max_age] = 6800;
-            stats[S.mod_armor] = 45;
-            stats[S.mod_crit] = 45;
-            stats[S.mod_damage] = 90;
-            stats[S.mod_health] = 90;
-            stats[S.mod_speed] = 18;
-            stats[S.mod_attack_speed] = 0.45f;
-
+            stats[Stats.zheTianAir.id] = 500; 
+            stats[Stats.zheTianAir_regen.id] = 10; 
+            stats[S.health] = pai * Factorial(10); 
+            stats[S.damage] = 5000;
+            stats[S.max_age] = 5000;
+            
             stats = _level_stats[11];
-            stats[Stats.zheTianAir.id] = 550; // 增加 50
-            stats[Stats.zheTianAir_regen.id] = 11; // 增加 1
-            stats[S.health] = 204800; // 翻倍
-            stats[S.damage] = 40960; // 翻倍
+            stats[Stats.zheTianAir.id] = 550; 
+            stats[Stats.zheTianAir_regen.id] = 11; 
+            stats[S.health] = pai * Factorial(11); 
+            stats[S.damage] = 8000; 
+            stats[S.max_age] = 6800;
+
+            stats = _level_stats[12];
+            stats[Stats.zheTianAir.id] = 550; 
+            stats[Stats.zheTianAir_regen.id] = 11; 
+            stats[S.health] = pai * Factorial(12); 
+            stats[S.damage] = 70000; 
             stats[S.max_age] = 9000;
-            stats[S.mod_armor] = 50;
-            stats[S.mod_crit] = 50;
-            stats[S.mod_damage] = 100;
-            stats[S.mod_health] = 100;
-            stats[S.mod_speed] = 20;
-            stats[S.mod_attack_speed] = 0.5f;
         }
+
+        public static int Factorial(int value)
+        {
+            if (value < 0)
+                return -1;
+            if(value == 1)
+                return 1;
+            return value * Factorial(value - 1);
+        }
+
 
         public static ReadOnlyCollection<BaseStats> LevelStats { get; }
         public static ReadOnlyCollection<float> LevelExpRequired { get; }
