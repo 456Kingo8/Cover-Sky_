@@ -51,8 +51,10 @@ namespace ZheTian.content
                 _initialized = true;
                 var obj = new GameObject("TempInfo", typeof(Text), typeof(ContentSizeFitter));
                 obj.transform.SetParent(__instance.transform.Find("Background"));
-                obj.transform.localPosition = new(200, 0, 100);
+                //obj.transform.position = new Vector3 (1380,500,300);
+                obj.transform.localPosition = new(10180,0,100);
                 obj.transform.localScale = Vector3.one;
+                obj.GetComponent<RectTransform>().sizeDelta = new Vector2(20000, 100);
             }
             var obj1 = __instance.transform.Find("Background/TempInfo");
             Debug.Log(obj1);
