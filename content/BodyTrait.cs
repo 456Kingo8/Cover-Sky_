@@ -7,65 +7,64 @@ using System.Threading.Tasks;
 using System.Xml.Linq;
 using UnityEngine;
 
-
 namespace ZheTian.content
 {
     internal static class BodyTrait
     {
         public static void Init()
         {
-            BodyTraitAdd("神王体", 5, new Dictionary<string, float>()
+            BodyTraitAdd("ShengWangTi", 0.01f, new Dictionary<string, float>()
             {
                 { S.health,100 }
             });
 
-            BodyTraitAdd("元灵体", 5, new Dictionary<string, float>()
+            BodyTraitAdd("YuanLingTi", 0.01f, new Dictionary<string, float>()
             {
                 { S.health,100 }
             });
-            BodyTraitAdd("先天道胎", 5, new Dictionary<string, float>()
+            BodyTraitAdd("XianTianDaoTai", 0.01f, new Dictionary<string, float>()
             {
                 { S.health,100 }
             });
-            BodyTraitAdd("荒古圣体", 5, new Dictionary<string, float>()
+            BodyTraitAdd("HuangGuShengTi", 0.01f, new Dictionary<string, float>()
             {
                 { S.health,100 }
             });
-            BodyTraitAdd("苍天霸体", 5, new Dictionary<string, float>()
+            BodyTraitAdd("CangTianBaTi", 0.01f, new Dictionary<string, float>()
             {
                 { S.health,100 }
             });
-            BodyTraitAdd("混沌体", 5, new Dictionary<string, float>()
+            BodyTraitAdd("HunDunTi", 0.01f, new Dictionary<string, float>()
             {
                 { S.health,100 }
             });
-            BodyTraitAdd("先天圣体道胎", 5, new Dictionary<string, float>()
+            BodyTraitAdd("XianTianShengTiDaoTai", 0.01f, new Dictionary<string, float>()
             {
                 { S.health,100 }
             });
-            BodyTraitAdd("虚空之体", 5, new Dictionary<string, float>()
+            BodyTraitAdd("XuKongZhiTi", 0.01f, new Dictionary<string, float>()
             {
                 { S.health,100 }
             });
 
-            BodyTraitAdd("虚空之体", 15, new Dictionary<string, float>()
+            BodyTraitAdd("XuKongZhiTi", 10.01f, new Dictionary<string, float>()
             {
                 { S.health, 50 },
                 { S.speed, 100 },
                 { S.intelligence, 50 }
             });
 
-            BodyTraitAdd("天妖体", 25, new Dictionary<string, float>()
+            BodyTraitAdd("TianYaoTi", 0.01f, new Dictionary<string, float>()
             {
 
             });
 
-            BodyTraitAdd("太阳神体", 10, new Dictionary<string, float>()
+            BodyTraitAdd("TaiYangShenTi", 0.01f, new Dictionary<string, float>()
             {
 
             });
 
-            BodyTraitAdd("太阴神体", 10, new Dictionary<string, float>()
+            BodyTraitAdd("TaiYinShenTi", 0.01f, new Dictionary<string, float>()
             {
 
             });
@@ -81,7 +80,7 @@ namespace ZheTian.content
             AssetManager.trait_groups.add(group);
         }
 
-        public static void BodyTraitAdd(string id, int birth, Dictionary<string, float> statDictionary, string path_icon = "ui/icons/neomodloader")
+        public static void BodyTraitAdd(string id, float birth, Dictionary<string, float> statDictionary, string path_icon = "ui/icons/neomodloader")
         {
             ActorTrait trait = new ActorTrait()
             {

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using UnityEngine;
 
 namespace ZheTian.content
 {
@@ -14,6 +15,8 @@ namespace ZheTian.content
         private const string cultisys_level_key = $"{key_prefix}.zhetian_level";
 
         private const string exp_key = $"{key_prefix}.zhetian_exp";
+
+        private const string talent_key = $"{key_prefix}.talent";
 
         public static int GetCultisysLevel(this Actor actor)
         {
@@ -44,7 +47,7 @@ namespace ZheTian.content
             level++;
             actor.data.set(cultisys_level_key, level);
 
-            var trait_list = actor.data.traits;
+ 
             switch (level)
             {
                 case 2:
@@ -64,16 +67,56 @@ namespace ZheTian.content
                     break;
             }
 
-            if (level >= 5)
-            {
-                foreach (var blacklist_trait_id in Cultisys.TraitsBlacklist) actor.removeTrait(blacklist_trait_id);
-
-                foreach (var blacklist_status_id in Cultisys.StatusesBlacklist)
-                    actor.finishStatusEffect(blacklist_status_id);
-            }
+            
 
             actor.event_full_heal = true;
             actor.setStatsDirty();
+        }
+
+        public static float GetTalent(this Actor actor)
+        {
+            actor.data.get(talent_key, out float talent, -1);
+            if (talent < 0)
+            {
+                if (actor.asset.isBoat)
+                {
+                    talent = 0;
+                }
+                else
+                {
+                    const int num = 100000;
+                    int v = UnityEngine.Random.Range(0,100000);
+                    if (v < num * 0.001 * 0.01)
+                        talent = 50;
+                    else if (v < num * (0.1 + 0.001) * 0.01)
+                        talent = 35;
+                    else if (v < num * (0.1 + 0.001 + 1.899) * 0.01)
+                        talent = 30;
+                    else if (v < num * (0.1 + 0.001 + 1.899 + 3) * 0.01)
+                        talent = 20;
+                    else if (v < num * (0.1 + 0.001 + 1.899 + 3 + 5) * 0.01)
+                        talent = 15;
+                    else if (v < num * (0.1 + 0.001 + 1.899 + 3.5 + 10) * 0.01)
+                        talent = 10;
+                    else if (v < num * (0.1 + 0.001 + 1.899 + 3.5 + 10 + 20) * 0.01)
+                        talent = 5;
+                    else
+                        talent = 0;
+                    //资质
+                    //无才0，彻彻底底的普通人，60 %
+                    //庸才5，每年获取5，20 %
+                    //普通10，每年获得10，10 %
+                    //中人15，每年获得15，5 %
+                    //天才20，每年，3 %
+                    //妖孽30，每年，1.899 %
+                    //帝资35，每年，0.1 %
+                    //仙姿50，每年，0.001 %
+                }
+
+                actor.data.set(talent_key, talent);
+            }
+
+            return talent;
         }
 
     }

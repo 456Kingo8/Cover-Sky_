@@ -1,6 +1,7 @@
 ﻿using NeoModLoader.api;
 using ZheTian.content;
 using UnityEngine;
+using HarmonyLib;
 
 namespace ZheTian
 {
@@ -18,6 +19,7 @@ namespace ZheTian
             AuthorityTrait.Init();
             new Stats().Init();
 
+            Harmony.CreateAndPatchAll(typeof(content.Patches));
             LogInfo(GetConfig()["Default"]["WhatToSay"].GetValue() as string);
         }
     }

@@ -11,11 +11,13 @@ namespace ZheTian.content
     {
         private const string stat_id_prefix = ModClass.asset_id_prefix;
 
-        public static BaseStatAsset zheTianAir;
+        public static BaseStatAsset zheTianAir { get; private set; }
 
-        public static BaseStatAsset zheTianAir_regen;
+        public static BaseStatAsset zheTianAir_regen { get; private set; }
 
-        public static BaseStatAsset stats_stacked_effect;
+        public static BaseStatAsset stats_stacked_effect { get; private set; }
+        //天资
+        public static BaseStatAsset aptitude { get; private set; }
 
         protected override void OnInit()
         {
