@@ -42,10 +42,6 @@ namespace ZheTian.content
             {
                 { S.health,100 }
             });
-            BodyTraitAdd("XuKongZhiTi", 0.01f, new Dictionary<string, float>()
-            {
-                { S.health,100 }
-            });
 
             BodyTraitAdd("XuKongZhiTi", 10.01f, new Dictionary<string, float>()
             {
@@ -80,7 +76,7 @@ namespace ZheTian.content
             AssetManager.trait_groups.add(group);
         }
 
-        public static void BodyTraitAdd(string id, float birth, Dictionary<string, float> statDictionary, string path_icon = "ui/icons/neomodloader")
+        public static void BodyTraitAdd(string id, float birth, Dictionary<string, float> statDictionary, float inherit = 0,string path_icon = "ui/icons/neomodloader")
         {
             ActorTrait trait = new ActorTrait()
             {
@@ -88,6 +84,7 @@ namespace ZheTian.content
                 group_id = "BodyTraitGroup",
                 path_icon = path_icon,
                 birth = birth,
+                inherit = inherit,
                 needs_to_be_explored = false
             };
             foreach (var kvp in statDictionary)

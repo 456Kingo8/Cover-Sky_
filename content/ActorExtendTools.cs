@@ -89,17 +89,17 @@ namespace ZheTian.content
                     if (v < num * 0.001 * 0.01)
                         talent = 50;
                     else if (v < num * (0.1 + 0.001) * 0.01)
-                        talent = 35;
-                    else if (v < num * (0.1 + 0.001 + 1.899) * 0.01)
                         talent = 30;
-                    else if (v < num * (0.1 + 0.001 + 1.899 + 3) * 0.01)
-                        talent = 20;
-                    else if (v < num * (0.1 + 0.001 + 1.899 + 3 + 5) * 0.01)
+                    else if (v < num * (0.1 + 0.001 + 1.899) * 0.01)
                         talent = 15;
+                    else if (v < num * (0.1 + 0.001 + 1.899 + 3) * 0.01)
+                        talent = 9;
+                    else if (v < num * (0.1 + 0.001 + 1.899 + 3 + 5) * 0.01)
+                        talent = 7;
                     else if (v < num * (0.1 + 0.001 + 1.899 + 3.5 + 10) * 0.01)
-                        talent = 10;
-                    else if (v < num * (0.1 + 0.001 + 1.899 + 3.5 + 10 + 20) * 0.01)
                         talent = 5;
+                    else if (v < num * (0.1 + 0.001 + 1.899 + 3.5 + 10 + 20) * 0.01)
+                        talent = 1;
                     else
                         talent = 0;
                     //资质

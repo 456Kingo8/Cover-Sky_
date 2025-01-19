@@ -18,6 +18,7 @@ namespace ZheTian
             BodyTrait.Init();
             AuthorityTrait.Init();
             new Stats().Init();
+            
 
             Harmony.CreateAndPatchAll(typeof(content.Patches));
             LogInfo(GetConfig()["Default"]["WhatToSay"].GetValue() as string);
