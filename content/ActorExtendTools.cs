@@ -30,10 +30,15 @@ namespace ZheTian.content
             actor.data.get(exp_key, out float exp);
             return exp;
         }
+        public static float GetModTalent(this Actor actor)
+        {
+            actor.data.get(Stats.mod_talent.id,out float mod_talent);
+            return mod_talent + actor.stats[Stats.mod_talent.id];
+        }
 
         public static void IncExp(this Actor actor, float value)
         {
-            actor.data.set(exp_key, actor.GetExp() + value * 100);
+            actor.data.set(exp_key, actor.GetExp() + value);
         }
         [Hotfixable]
         public static void ResetExp(this Actor actor)
@@ -57,6 +62,7 @@ namespace ZheTian.content
             actor.data.get(talent_key, out float talent, -1);
             if (talent < 0)
             {
+                actor.data.set(Stats.mod_talent.id,1f);
                 if (actor.asset.isBoat)
                 {
                     talent = 0;
