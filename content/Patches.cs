@@ -71,6 +71,7 @@ namespace ZheTian.content
             obj1.GetComponent<Text>().text = "当前境界：" + Cultisys.GetName(level) +
                     "\n修炼进度:" + __instance.actor.GetExp() + "/" + Cultisys.LevelExpRequired[level] +
                     "\n天赋：" + __instance.actor.GetTalent() +
+                    "\n修炼速度：" + __instance.actor.GetModTalent() * 100 + '%' +
                     "\n最大寿命:" + __instance.actor.stats[S.max_age];
             obj1.GetComponent<Text>().font = LocalizedTextManager.currentFont;
         }
@@ -82,7 +83,8 @@ namespace ZheTian.content
             var level = __instance.GetCultisysLevel();
             if (level >= Cultisys.MaxLevel) return;
             var talent = __instance.GetTalent();
-            __instance.IncExp(talent);
+            var mod_talent = __instance.GetModTalent();
+            __instance.IncExp(talent * mod_talent);
             if (__instance.GetExp() >= Cultisys.LevelExpRequired[level])
             {
                 __instance.LevelUp();

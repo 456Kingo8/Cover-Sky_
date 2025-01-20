@@ -21,9 +21,10 @@ namespace ZheTian
             //寿命提升
             Config.isEditor = true;
             
+            new Stats().Init();
             Trait.Init();
             AuthorityTrait.Init();
-            new Stats().Init();
+            
             
 
             Harmony.CreateAndPatchAll(typeof(content.Patches));

@@ -32,7 +32,8 @@ namespace ZheTian.content
             {
                 { S.mod_damage,20 },
                 { S.mod_crit,20 },
-                { S.mod_health,10 }
+                { S.mod_health,10 },
+                { Stats.mod_talent.id,1f}
             });
 
             AuthorityTraitAdd("DouZhanTianDi", 0.01f, new Dictionary<string, float>()
@@ -49,7 +50,7 @@ namespace ZheTian.content
 
             AuthorityTraitAdd("ZheXian", 0.01f, new Dictionary<string, float>()
             {
-
+                { Stats.mod_talent.id,1f}
             });
 
             AuthorityTraitAdd("PoShenRenJia", 0.01f, new Dictionary<string, float>()
@@ -99,7 +100,6 @@ namespace ZheTian.content
 
             AuthorityTraitAdd("ShenLin", 0.01f, new Dictionary<string, float>()
             {
-
             });
 
             AuthorityTraitAdd("BaiHui", 0.01f, new Dictionary<string, float>()
@@ -114,7 +114,7 @@ namespace ZheTian.content
 
             AuthorityTraitAdd("ShengLing", 0.01f, new Dictionary<string, float>()
             {
-
+                { Stats.mod_talent.id,0.5f}
             });
 
             AuthorityTraitAdd("GuRouXiangLian", 0.01f, new Dictionary<string, float>()
