@@ -43,7 +43,7 @@ namespace ZheTian.content
                 { S.health,100 }
             });
 
-            BodyTraitAdd("XuKongZhiTi", 10.01f, new Dictionary<string, float>()
+            BodyTraitAdd("XuKongZhiTi", 0.01f, new Dictionary<string, float>()
             {
                 { S.health, 50 },
                 { S.speed, 100 },
