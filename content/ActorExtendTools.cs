@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using NeoModLoader.api.attributes;
 using UnityEngine;
 
 namespace ZheTian.content
@@ -32,42 +33,20 @@ namespace ZheTian.content
 
         public static void IncExp(this Actor actor, float value)
         {
-            actor.data.set(exp_key, actor.GetExp() + value);
+            actor.data.set(exp_key, actor.GetExp() + value * 100);
         }
-
+        [Hotfixable]
         public static void ResetExp(this Actor actor)
         {
-            actor.data.set(exp_key, 0);
+            actor.data.set(exp_key, 0f);
         }
-
+        [Hotfixable]
         public static void LevelUp(this Actor actor)
         {
             var level = actor.GetCultisysLevel();
             if (level >= Cultisys.MaxLevel) return;
             level++;
             actor.data.set(cultisys_level_key, level);
-
- 
-            switch (level)
-            {
-                case 2:
-                    
-                    break;
-                case 3:
-                    
-                    break;
-                case 4:
-                    
-                    break;
-                case 5:
-                    
-                    break;
-                case 6:
-                   
-                    break;
-            }
-
-            
 
             actor.event_full_heal = true;
             actor.setStatsDirty();

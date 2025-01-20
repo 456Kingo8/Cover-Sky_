@@ -16,10 +16,20 @@ namespace ZheTian.content
     {
         private static bool _initialized;
 
+        [Hotfixable]
         private static void addition_stats(Actor actor_base)
         {
             var level = actor_base.a.GetCultisysLevel();
             if (level >= 0) actor_base.stats.mergeStats(Cultisys.LevelStats[level]);
+            
+            foreach (var trait_id in actor_base.data.s_traits_ids)
+            {
+                ActorTrait trait = AssetManager.traits.get(trait_id);
+                TraitExtend trait_extend = trait.GetExtend();
+                BaseStats conditional_stats = trait_extend.conditional_basestats?.Invoke(actor_base.a);
+                if (conditional_stats != null) actor_base.stats.mergeStats(conditional_stats);
+            }
+
         }
 
         [HarmonyTranspiler]
@@ -64,8 +74,8 @@ namespace ZheTian.content
                     "\n最大寿命:" + __instance.actor.stats[S.max_age];
             obj1.GetComponent<Text>().font = LocalizedTextManager.currentFont;
         }
-
-        [HarmonyPostfix, Hotfixable]
+        [Hotfixable]
+        [HarmonyPostfix]
         [HarmonyPatch(typeof(Actor), nameof(Actor.updateAge))]
         private static void Actor_updateAge_postfix(Actor __instance)
         {
@@ -77,6 +87,7 @@ namespace ZheTian.content
             {
                 __instance.LevelUp();
                 __instance.ResetExp();
+                Debug.Log($"{__instance.GetExp()} / {Cultisys.LevelExpRequired[level]}");
             }
         }
 
