@@ -54,8 +54,8 @@ namespace ZheTian.content
             stats = _level_stats[1];
             stats[Stats.zheTianAir.id] = 50; 
             stats[Stats.zheTianAir_regen.id] = 1; 
-            stats[S.health] = pai * Factorial(1); 
-            stats[S.damage] = 20; 
+            stats[S.health] = 200; 
+            stats[S.damage] = 50; 
             stats[S.max_age] = 150;
             stats[S.mod_armor] = 0;
             stats[S.mod_crit] = 0; 
@@ -67,83 +67,83 @@ namespace ZheTian.content
             stats = _level_stats[2];
             stats[Stats.zheTianAir.id] = 100;  
             stats[Stats.zheTianAir_regen.id] = 2; 
-            stats[S.health] = pai * Factorial(2); 
-            stats[S.damage] = 50;
+            stats[S.health] =1000; 
+            stats[S.damage] = 100;
             stats[S.max_age] = 300;
 
 
             stats = _level_stats[3];
             stats[Stats.zheTianAir.id] = 150; 
             stats[Stats.zheTianAir_regen.id] = 3; 
-            stats[S.health] = pai * Factorial(3); 
-            stats[S.damage] = 100; 
+            stats[S.health] =1500; 
+            stats[S.damage] = 200; 
             stats[S.max_age] = 500;
 
 
             stats = _level_stats[4];
             stats[Stats.zheTianAir.id] = 200; 
             stats[Stats.zheTianAir_regen.id] = 4; 
-            stats[S.health] = pai * Factorial(4); 
-            stats[S.damage] = 150; 
+            stats[S.health] = Factorial(4) + 2500; 
+            stats[S.damage] = 600; 
             stats[S.max_age] = 800;
 
 
             stats = _level_stats[5];
             stats[Stats.zheTianAir.id] = 250; 
             stats[Stats.zheTianAir_regen.id] = 5; 
-            stats[S.health] = pai * Factorial(5); 
-            stats[S.damage] = 400; 
+            stats[S.health] = Factorial(1) * 1000; 
+            stats[S.damage] = 1200; 
             stats[S.max_age] = 1000;
 
 
             stats = _level_stats[6];
             stats[Stats.zheTianAir.id] = 300; 
             stats[Stats.zheTianAir_regen.id] = 6; 
-            stats[S.health] = pai * Factorial(6); 
-            stats[S.damage] = 600; 
+            stats[S.health] = Factorial(2) * 1000; 
+            stats[S.damage] = 2000; 
             stats[S.max_age] = 1500;
 
             stats = _level_stats[7];
             stats[Stats.zheTianAir.id] = 350; 
             stats[Stats.zheTianAir_regen.id] = 7; 
-            stats[S.health] = pai * Factorial(7); 
-            stats[S.damage] = 1400; 
+            stats[S.health] = Factorial(3) * 2000; 
+            stats[S.damage] = 3600; 
             stats[S.max_age] = 2500;
 
 
             stats = _level_stats[8];
             stats[Stats.zheTianAir.id] = 400; 
             stats[Stats.zheTianAir_regen.id] = 8; 
-            stats[S.health] = pai * Factorial(8); 
-            stats[S.damage] = 2000; 
+            stats[S.health] = Factorial(4) * 2000; 
+            stats[S.damage] = 5000; 
             stats[S.max_age] = 3000;
             
             stats = _level_stats[9];
             stats[Stats.zheTianAir.id] = 450; 
             stats[Stats.zheTianAir_regen.id] = 9; 
-            stats[S.health] = pai * Factorial(9);
-            stats[S.damage] = 3600;
+            stats[S.health] = Factorial(5) * 1000;
+            stats[S.damage] = 7000;
             stats[S.max_age] = 4000;
 
             stats = _level_stats[10];
             stats[Stats.zheTianAir.id] = 500; 
             stats[Stats.zheTianAir_regen.id] = 10; 
-            stats[S.health] = pai * Factorial(10); 
-            stats[S.damage] = 5000;
+            stats[S.health] = Factorial(6) * 1000; 
+            stats[S.damage] = 10000;
             stats[S.max_age] = 5000;
             
             stats = _level_stats[11];
             stats[Stats.zheTianAir.id] = 550; 
             stats[Stats.zheTianAir_regen.id] = 11; 
-            stats[S.health] = pai * Factorial(11); 
-            stats[S.damage] = 8000; 
+            stats[S.health] = Factorial(7) * 50; 
+            stats[S.damage] = 20000; 
             stats[S.max_age] = 6800;
 
             stats = _level_stats[12];
             stats[Stats.zheTianAir.id] = 550; 
             stats[Stats.zheTianAir_regen.id] = 11; 
-            stats[S.health] = pai * Factorial(12); 
-            stats[S.damage] = 70000; 
+            stats[S.health] = Factorial(8) * 100; 
+            stats[S.damage] = 100000; 
             stats[S.max_age] = 9000;
         }
 
