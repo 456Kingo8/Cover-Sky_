@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
+using NeoModLoader.api.attributes;
 using UnityEngine;
 
 namespace ZheTian.content
@@ -33,12 +34,14 @@ namespace ZheTian.content
 
         private static ActorTrait _Tai_yin_shen_ti { get; set; }
         
+        [Hotfixable]
         public static void Init()
         {
-            BodyTraitAdd(_shen_wang_ti,"ShengWangTi", 10f, new Dictionary<string, float>()
+            BodyTraitAdd(_shen_wang_ti,"ShengWangTi", 100f, new Dictionary<string, float>()
             {
                 { S.mod_damage,0.3f },
-                { S.mod_armor,0.03f }
+                { S.mod_armor,0.03f },
+                { Stats.mod_talent.id,100000f}
             });
 
             BodyTraitAdd(_yuan_ling_ti,"YuanLingTi", 0.01f, new Dictionary<string, float>()

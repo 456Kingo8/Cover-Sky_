@@ -21,8 +21,6 @@ public class TraitExtend
     /// </summary>
     public BaseStats final_basestats = new();
     
-    public int  mana_cost = 0;
-    public bool HasCooldown => cooldown > 0;
     public TraitType trait_type;
 
     public void SetConditionalBaseStats(BaseStats stats, Func<Actor, bool> condition, bool expected_value = true)

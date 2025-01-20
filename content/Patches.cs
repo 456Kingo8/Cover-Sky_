@@ -67,7 +67,7 @@ namespace ZheTian.content
                 obj.GetComponent<RectTransform>().sizeDelta = new Vector2(20000, 100);
             }
             var obj1 = __instance.transform.Find("Background/TempInfo");
-            Debug.Log(obj1);
+
             obj1.GetComponent<Text>().text = "当前境界：" + Cultisys.GetName(level) +
                     "\n修炼进度:" + __instance.actor.GetExp() + "/" + Cultisys.LevelExpRequired[level] +
                     "\n天赋：" + __instance.actor.GetTalent() +
@@ -85,7 +85,7 @@ namespace ZheTian.content
             var talent = __instance.GetTalent();
             var mod_talent = __instance.GetModTalent();
             __instance.IncExp(talent * mod_talent);
-            if (__instance.GetExp() >= Cultisys.LevelExpRequired[level])
+            if (__instance.GetExp() >= Cultisys.LevelExpRequired[level] && level < 12)
             {
                 __instance.LevelUp();
                 __instance.ResetExp();

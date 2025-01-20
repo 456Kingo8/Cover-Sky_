@@ -14,7 +14,6 @@ public partial class Trait  : ExtendLibrary<ActorTrait, Trait>
     
     private static void AddEffects()
     {
-        // 神王体基础效果：血攻加持30%，防御3%
         _shen_wang_ti.GetExtend().conditional_basestats = a =>
         {
             return IsDivineKingBodyUpgraded(a);
@@ -25,6 +24,7 @@ public partial class Trait  : ExtendLibrary<ActorTrait, Trait>
     [Hotfixable]
     private static BaseStats IsDivineKingBodyUpgraded(Actor actor)
     {
+        Debug.Log("调用函数");
         //小成
         if (actor.GetCultisysLevel() > 4 && actor.GetCultisysLevel() < 11)
         {

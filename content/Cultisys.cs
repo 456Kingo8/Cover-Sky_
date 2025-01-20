@@ -5,12 +5,13 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using NeoModLoader.api.attributes;
 
 namespace ZheTian.content
 {
     internal class Cultisys
     {
-        public const int MaxLevel = 15;
+        public const int MaxLevel = 13;
         private const int pai = 3;
         private static readonly BaseStats[] _level_stats;
         private static readonly float[] _level_exp_required;
