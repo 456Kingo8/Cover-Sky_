@@ -88,6 +88,8 @@ public partial class Trait  : ExtendLibrary<ActorTrait, Trait>
             return false;
         };
         
+        
+        
         //天妖体，战斗中变大，攻速加10%，伤害减免10%
         _tian_yao_ti.action_attack_target = (actor, target, tile) =>
         {

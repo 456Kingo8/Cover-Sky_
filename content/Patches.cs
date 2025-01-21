@@ -16,6 +16,7 @@ namespace ZheTian.content
     internal class Patches
     {
         private static bool _initialized;
+        
 
         [Hotfixable]
         private static void addition_stats(Actor actor_base)
@@ -107,6 +108,20 @@ namespace ZheTian.content
             else
             {
                 //帝路争锋
+                if (World.world.mapStats.getCurrentYear() % 3000 == 0)
+                {
+                   
+                    if (!__instance.hasTrait("_di_lu_zheng_feng"))
+                    {
+                        __instance.addTrait("di_lu_zheng_feng");
+                    }
+                }
+                    // __instance.removeTrait("di_lu_zheng_feng");
+                    // __instance.addTrait("_di_qu");
+                    // __instance.addTrait("_di_xin");
+                    // __instance.LevelUp();
+                    // __instance.ResetExp();
+                    // Debug.Log($"{__instance.GetExp()} / {Cultisys.LevelExpRequired[level]}")
             }
             
             // 足够老的时候每年都更新一下属性，保证衰败及时

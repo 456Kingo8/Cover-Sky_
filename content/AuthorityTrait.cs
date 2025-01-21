@@ -65,9 +65,9 @@ namespace ZheTian.content
         {
             TraitAdd(_di_lu_zheng_feng,0, new Dictionary<string, float>()
             {
-                { S.mod_damage,10 },
-                { S.mod_crit,10 },
-                { S.mod_health,10 }
+                { S.mod_damage,0.1f },
+                { S.mod_crit,0.1f },
+                { S.mod_health,0.1f }
             },"AuthorityTraitGroup");
 
             TraitAdd(_tian_xin_yin_ji, 0, new Dictionary<string, float>()
