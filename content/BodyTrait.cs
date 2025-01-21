@@ -42,7 +42,6 @@ namespace ZheTian.content
             TraitAdd(_fan_gu, 0.80f, new Dictionary<string, float>()
             {
                 { S.mod_health,0.05f },
-                { S.mod_health,0.05f },
                 { S.mod_armor,0.01f },
             },"BodyTraitGroup");
             
