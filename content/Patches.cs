@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using NeoModLoader.api.attributes;
 using UnityEngine.UI;
 using UnityEngine;
+using System;
 
 namespace ZheTian.content
 {
@@ -31,11 +32,12 @@ namespace ZheTian.content
             }
 
             var age_ratio = actor_base.getAge() / actor_base.stats[S.max_age];
-            if (age_ratio > 0.9f)
+            if (age_ratio > 0.9f && !actor_base.hasTrait("immortal"))
             {
-                actor_base.stats[S.health] *= (1 - 0.01f * (1 - age_ratio) * 400); //强行所有减40%
-                actor_base.stats[S.damage] *= (1 - 0.01f * (1 - age_ratio) * 400); //强行所有减40%
-                actor_base.stats[S.armor] *= (1 - 0.01f * (1 - age_ratio) * 400); //强行所有减40%
+                age_ratio = UnityEngine.Mathf.Clamp(age_ratio - 0.9f, 0 ,0.1f);
+                actor_base.stats[S.health] *= (1 - 0.01f * age_ratio * 400); //每超过年龄上限1%减4%属性 最多40%
+                actor_base.stats[S.damage] *= (1 - 0.01f * age_ratio* 400); //
+                actor_base.stats[S.armor] *= (1 - 0.01f * age_ratio * 400); //
             }
         }
 
