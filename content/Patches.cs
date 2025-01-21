@@ -85,6 +85,26 @@ namespace ZheTian.content
                     "\n最大寿命:" + __instance.actor.stats[S.max_age];
             obj1.GetComponent<Text>().font = LocalizedTextManager.currentFont;
         }
+        
+        [HarmonyPostfix]
+        [HarmonyPatch(typeof(Actor), nameof(Actor.getHit))]
+        private static void Actor_getHit_postfix(Actor __instance,float pDamage, BaseSimObject pAttacker = null)
+        {
+            // 实现攻击免伤
+            if (pAttacker != null && pAttacker.isActor())
+            {
+                Actor attacker = pAttacker as Actor;
+                int levelDiff = attacker.GetCultisysLevel() - __instance.GetCultisysLevel();
+                
+                if (levelDiff < 0)
+                {
+                    Debug.Log("免伤攻击");
+                    float damageReduction = Mathf.Clamp(Mathf.Abs(levelDiff) * 0.05f, 0f, 0.9f);
+                    pDamage *= (1 - damageReduction);
+                }
+            }
+        }
+        
         [Hotfixable]
         [HarmonyPostfix]
         [HarmonyPatch(typeof(Actor), nameof(Actor.updateAge))]
@@ -114,6 +134,7 @@ namespace ZheTian.content
                     if (!__instance.hasTrait("_di_lu_zheng_feng"))
                     {
                         __instance.addTrait("di_lu_zheng_feng");
+                        //__instance.addTrait("madness");
                     }
                 }
                     // __instance.removeTrait("di_lu_zheng_feng");
@@ -132,6 +153,6 @@ namespace ZheTian.content
             }
         }
 
-
+    
     }
 }
