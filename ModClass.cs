@@ -16,14 +16,9 @@ namespace ZheTian
 
         protected override void OnModLoad()
         {
-            //两个特质，一个是体质的特质，一个是神通的特质
-            //体系升级
-            //寿命提升
             Config.isEditor = true;
-            
             new Stats().Init();
-            Trait.Init();
-            AuthorityTrait.Init();
+            new Trait().Init();
             
             
 
