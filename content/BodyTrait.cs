@@ -37,7 +37,7 @@ namespace ZheTian.content
         [Hotfixable]
         public static void Init()
         {
-            BodyTraitAdd(_shen_wang_ti,"ShengWangTi", 100f, new Dictionary<string, float>()
+            BodyTraitAdd(_shen_wang_ti,"ShengWangTi", 0.01f, new Dictionary<string, float>()
             {
                 { S.mod_damage,0.3f },
                 { S.mod_armor,0.03f },

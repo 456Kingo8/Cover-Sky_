@@ -85,7 +85,7 @@ namespace ZheTian.content
             var talent = __instance.GetTalent();
             var mod_talent = __instance.GetModTalent();
             __instance.IncExp(talent * mod_talent);
-            if (__instance.GetExp() >= Cultisys.LevelExpRequired[level] && level < 12)
+            if (__instance.GetExp() >= Cultisys.LevelExpRequired[level])
             {
                 __instance.LevelUp();
                 __instance.ResetExp();

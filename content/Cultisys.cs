@@ -11,7 +11,7 @@ namespace ZheTian.content
 {
     internal class Cultisys
     {
-        public const int MaxLevel = 13;
+        public const int MaxLevel = 12;
         private const int pai = 3;
         private static readonly BaseStats[] _level_stats;
         private static readonly float[] _level_exp_required;
@@ -29,7 +29,7 @@ namespace ZheTian.content
         static Cultisys()
         {
             _level_stats = new BaseStats[MaxLevel + 1];
-            _level_exp_required = new float[MaxLevel];
+            _level_exp_required = new float[MaxLevel + 1];
             for (var i = 0; i <= MaxLevel; i++) _level_stats[i] = new BaseStats();
             _level_exp_required[0] = 500;
             _level_exp_required[1] = 1000;
@@ -43,7 +43,7 @@ namespace ZheTian.content
             _level_exp_required[9] = 9000;
             _level_exp_required[10] = 10000;
             _level_exp_required[11] = 50000;
-            _level_exp_required[12] = 100000;
+            _level_exp_required[12] = 0;
             LevelExpRequired = new ReadOnlyCollection<float>(_level_exp_required);
             LevelStats = new ReadOnlyCollection<BaseStats>(_level_stats);
 
@@ -92,7 +92,7 @@ namespace ZheTian.content
             stats = _level_stats[5];
             stats[Stats.zheTianAir.id] = 250; 
             stats[Stats.zheTianAir_regen.id] = 5; 
-            stats[S.health] = Factorial(1) * 1000; 
+            stats[S.health] = Factorial(1) * 3000; 
             stats[S.damage] = 1200; 
             stats[S.max_age] = 1000;
 
@@ -100,7 +100,7 @@ namespace ZheTian.content
             stats = _level_stats[6];
             stats[Stats.zheTianAir.id] = 300; 
             stats[Stats.zheTianAir_regen.id] = 6; 
-            stats[S.health] = Factorial(2) * 1000; 
+            stats[S.health] = Factorial(2) * 3000; 
             stats[S.damage] = 2000; 
             stats[S.max_age] = 1500;
 
