@@ -26,6 +26,7 @@ public partial class Trait
         };
 
         // 将特性组添加到特性组库
+        
         AssetManager.trait_groups.add(group1);
         
         ActorTraitGroupAsset group2 = new ActorTraitGroupAsset()

@@ -22,9 +22,9 @@ namespace ZheTian.content
 
         private static ActorTrait _cang_tian_ba_ti { get; set; }
         
-        private static ActorTrait _yuan_ling_ti { get; set; }
+        private static ActorTrait _yuan_lin_ti { get; set; }
 
-        private static ActorTrait _Hun_dun_ti { get; set; }
+        private static ActorTrait _hun_dun_ti { get; set; }
 
         private static ActorTrait _xian_tian_sheng_ti_dao_tai { get; set; }
 
@@ -51,7 +51,7 @@ namespace ZheTian.content
                 { S.mod_armor,0.03f },
             },"BodyTraitGroup");
 
-            TraitAdd(_yuan_ling_ti,0.03f, new Dictionary<string, float>()
+            TraitAdd(_yuan_lin_ti,0.03f, new Dictionary<string, float>()
             {
                 { Stats.mod_talent.id,10f }
             },"BodyTraitGroup");
@@ -78,7 +78,7 @@ namespace ZheTian.content
                 { S.mod_armor, 0.07f }
             },"BodyTraitGroup");
             
-            TraitAdd(_Hun_dun_ti, 0.0001f, new Dictionary<string, float>()
+            TraitAdd(_hun_dun_ti, 0.0001f, new Dictionary<string, float>()
             {
                 { S.mod_health, 1.2f },
                 { S.mod_damage, 1.2f },

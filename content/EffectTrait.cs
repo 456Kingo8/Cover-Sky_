@@ -24,7 +24,7 @@ public partial class Trait  : ExtendLibrary<ActorTrait, Trait>
         {
             return IsDivineKingBodyUpgraded(a,0.5f,0.7f,0.03f,0.03f);
         };
-        _yuan_ling_ti.GetExtend().conditional_basestats = a =>
+        _yuan_lin_ti.GetExtend().conditional_basestats = a =>
         {
             return IsDivineKingBodyUpgraded(a, 0.5f, 0.7f, 0.03f, 0.03f);
         };
@@ -62,7 +62,7 @@ public partial class Trait  : ExtendLibrary<ActorTrait, Trait>
         };
         
         //S级体质实现了基础:血攻120%，防御10%（小成，大成）
-        _Hun_dun_ti.GetExtend().conditional_basestats = a =>
+        _hun_dun_ti.GetExtend().conditional_basestats = a =>
         {
             return IsDivineKingBodyUpgraded(a,1.5f,2f,0.1f,0.1f);
         };
