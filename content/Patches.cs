@@ -30,6 +30,13 @@ namespace ZheTian.content
                 if (conditional_stats != null) actor_base.stats.mergeStats(conditional_stats);
             }
 
+            var age_ratio = actor_base.getAge() / actor_base.stats[S.max_age];
+            if (age_ratio > 0.9f)
+            {
+                actor_base.stats[S.health] *= (1 - 0.01f * (1 - age_ratio) * 400); //强行所有减40%
+                actor_base.stats[S.damage] *= (1 - 0.01f * (1 - age_ratio) * 400); //强行所有减40%
+                actor_base.stats[S.armor] *= (1 - 0.01f * (1 - age_ratio) * 400); //强行所有减40%
+            }
         }
 
         [HarmonyTranspiler]
@@ -85,11 +92,26 @@ namespace ZheTian.content
             var talent = __instance.GetTalent();
             var mod_talent = __instance.GetModTalent();
             __instance.IncExp(talent * mod_talent);
-            if (__instance.GetExp() >= Cultisys.LevelExpRequired[level])
+            
+            if (level < 11)
             {
-                __instance.LevelUp();
-                __instance.ResetExp();
-                Debug.Log($"{__instance.GetExp()} / {Cultisys.LevelExpRequired[level]}");
+                if (__instance.GetExp() >= Cultisys.LevelExpRequired[level])
+                {
+                    __instance.LevelUp();
+                    __instance.ResetExp();
+                    Debug.Log($"{__instance.GetExp()} / {Cultisys.LevelExpRequired[level]}");
+                }
+            }
+            else
+            {
+                //帝路争锋
+            }
+            
+            // 足够老的时候每年都更新一下属性，保证衰败及时
+            var age_ratio = __instance.getAge() / __instance.stats[S.max_age];
+            if (age_ratio > 0.9f)
+            {
+                __instance.setStatsDirty(); 
             }
         }
 

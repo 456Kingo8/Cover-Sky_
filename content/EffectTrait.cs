@@ -11,6 +11,7 @@ public partial class Trait  : ExtendLibrary<ActorTrait, Trait>
     protected override void OnInit()
     {
         RegisterAssets(stat_id_prefix);
+        InitActorTraitGroup();
         InitBodyTrait();
         InitAuthorityTrait();
         AddEffects();
