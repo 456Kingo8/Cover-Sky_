@@ -14,6 +14,7 @@ namespace ZheTian.content
     public partial class Trait
     {
         private static ActorTrait _shen_wang_ti { get; set; }
+        private static ActorTrait _fan_gu { get; set; }
         
         private static ActorTrait _xian_tian_dao_tai { get; set; }
 
@@ -38,36 +39,51 @@ namespace ZheTian.content
         [Hotfixable]
         public void InitBodyTrait()
         {
-            TraitAdd(_shen_wang_ti,"ShengWangTi", 0.01f, new Dictionary<string, float>()
+            TraitAdd(_fan_gu,"FanGu", 0.80f, new Dictionary<string, float>()
+            {
+                { S.mod_health,0.05f },
+                { S.mod_health,0.05f },
+                { S.mod_armor,0.01f },
+            },"BodyTraitGroup");
+            
+            TraitAdd(_shen_wang_ti,"ShengWangTi", 0.03f, new Dictionary<string, float>()
             {
                 { S.mod_damage,0.3f },
                 { S.mod_armor,0.03f },
-                { Stats.mod_talent.id,100000f}
             },"BodyTraitGroup");
 
-            TraitAdd(_yuan_ling_ti,"YuanLingTi", 0.01f, new Dictionary<string, float>()
+            TraitAdd(_yuan_ling_ti,"YuanLingTi", 0.03f, new Dictionary<string, float>()
             {
-                { S.health,100 }
+                { Stats.mod_talent.id,10f }
             },"BodyTraitGroup");
             
-            TraitAdd(_xian_tian_dao_tai,"XianTianDaoTai", 0.01f, new Dictionary<string, float>()
+            TraitAdd(_xian_tian_dao_tai,"XianTianDaoTai", 0.005f, new Dictionary<string, float>()
             {
-                { S.health,100 }
+                { S.mod_health, 0.8f },
+                { S.mod_damage, 0.8f },
+                { S.mod_armor, 0.07f },
+                { Stats.mod_talent.id, 0.3f }
             },"BodyTraitGroup");
             
-            TraitAdd(_huang_gu_sheng_ti,"HuangGuShengTi", 0.01f, new Dictionary<string, float>()
+            TraitAdd(_huang_gu_sheng_ti,"HuangGuShengTi", 0.005f, new Dictionary<string, float>()
             {
-                { S.health,100 }
+                { S.mod_health, 0.8f },
+                { S.mod_damage, 0.8f },
+                { S.mod_armor, 0.07f }
             },"BodyTraitGroup");
             
-            TraitAdd(_cang_tian_ba_ti,"CangTianBaTi", 0.01f, new Dictionary<string, float>()
+            TraitAdd(_cang_tian_ba_ti,"CangTianBaTi", 0.005f, new Dictionary<string, float>()
             {
-                { S.health,100 }
+                { S.mod_health, 0.8f },
+                { S.mod_damage, 0.8f },
+                { S.mod_armor, 0.07f }
             },"BodyTraitGroup");
             
-            TraitAdd(_Hun_dun_ti,"HunDunTi", 0.01f, new Dictionary<string, float>()
+            TraitAdd(_Hun_dun_ti,"HunDunTi", 0.0001f, new Dictionary<string, float>()
             {
-                { S.health,100 }
+                { S.mod_health, 1.2f },
+                { S.mod_damage, 1.2f },
+                { S.mod_armor, 0.1f }
             },"BodyTraitGroup");
             
             TraitAdd(_xian_tian_sheng_ti_dao_tai,"XianTianShengTiDaoTai", 0.01f, new Dictionary<string, float>()
@@ -77,24 +93,30 @@ namespace ZheTian.content
 
             TraitAdd(_xu_kong_zhi_ti,"XuKongZhiTi", 0.01f, new Dictionary<string, float>()
             {
-                { S.health, 50 },
-                { S.speed, 100 },
-                { S.intelligence, 50 }
+                { S.mod_health, 0.5f },
+                { S.mod_damage, 0.5f },
+                { S.mod_armor, 0.05f }
             },"BodyTraitGroup");
 
             TraitAdd(_tian_yao_ti,"TianYaoTi", 0.01f, new Dictionary<string, float>()
             {
-
+                { S.mod_health, 0.5f },
+                { S.mod_damage, 0.5f },
+                { S.mod_armor, 0.05f }
             },"BodyTraitGroup");
 
             TraitAdd(_tai_yang_shen_ti,"TaiYangShenTi", 0.01f, new Dictionary<string, float>()
             {
-
+                { S.mod_health, 0.5f },
+                { S.mod_damage, 0.5f },
+                { S.mod_armor, 0.05f }
             },"BodyTraitGroup");
 
             TraitAdd(_tai_yin_shen_ti,"TaiYinShenTi", 0.01f, new Dictionary<string, float>()
             {
-
+                { S.mod_health, 0.5f },
+                { S.mod_damage, 0.5f },
+                { S.mod_armor, 0.05f }
             },"BodyTraitGroup");
 
             ActorTraitGroupAsset group = new ActorTraitGroupAsset()
