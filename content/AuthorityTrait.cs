@@ -91,7 +91,7 @@ namespace ZheTian.content
             
             TraitAdd(_zhe_xian, 0.001f, new Dictionary<string, float>()
             {
-                {Stats.mod_talent.id,90f }
+                {Stats.mod_talent.id,0.9f }
             },"BornTraitGroup");
             
             TraitAdd(_dao_po_ren_jia, 0.01f, new Dictionary<string, float>()
@@ -145,7 +145,7 @@ namespace ZheTian.content
             
             TraitAdd(_sheng_ling, 0.001f, new Dictionary<string, float>()
             {
-                {Stats.mod_talent.id,50f}
+                {Stats.mod_talent.id,0.5f}
             },"BornTraitGroup");
             
             TraitAdd(_gu_rou_xiang_lian, 0.01f, new Dictionary<string, float>()
@@ -240,11 +240,11 @@ namespace ZheTian.content
             },"AuthorityTraitGroup");
             TraitAdd(_da_dao_jin_dan, 0.001f, new Dictionary<string, float>()
             {
-                
+                {Stats.mod_talent.id,1f}
             },"BornTraitGroup");
             TraitAdd(_hong_meng_ling_guang, 0.001f, new Dictionary<string, float>()
             {
-                {Stats.mod_talent.id,100f}
+                
             },"AuthorityTraitGroup");
             TraitAdd(_xian_zhe, 0.01f, new Dictionary<string, float>()
             {
