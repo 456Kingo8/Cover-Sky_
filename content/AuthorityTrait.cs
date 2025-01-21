@@ -86,8 +86,7 @@ namespace ZheTian.content
 
             TraitAdd(_jian_jue_fu_yun, 0.01f, new Dictionary<string, float>()
             {
-                { S.armor,10 },
-                { S.dodge,10 }
+               
             },"AuthorityTraitGroup");
             
             TraitAdd(_zhe_xian, 0.001f, new Dictionary<string, float>()
@@ -97,69 +96,57 @@ namespace ZheTian.content
             
             TraitAdd(_dao_po_ren_jia, 0.01f, new Dictionary<string, float>()
             {
-                { S.armor,10 },
-                { S.dodge,10 }
+               
             },"AuthorityTraitGroup");
             TraitAdd(_shi_jian_zhi_guang, 0.01f, new Dictionary<string, float>()
             {
-                { S.armor,10 },
-                { S.dodge,10 }
+                
             },"AuthorityTraitGroup");
             TraitAdd(_bu_dong_ming_wang, 0.01f, new Dictionary<string, float>()
             {
-                { S.armor,10 },
-                { S.dodge,10 }
+               
             },"AuthorityTraitGroup");
             TraitAdd(_zhi_si_fang_xiu, 0.01f, new Dictionary<string, float>()
             {
-                { S.armor,10 },
-                { S.dodge,10 }
+               
             },"AuthorityTraitGroup");
             TraitAdd(_shen_zang, 0.01f, new Dictionary<string, float>()
             {
-                { S.armor,10 },
-                { S.dodge,10 }
+               
             },"AuthorityTraitGroup");
             TraitAdd(_bu_si_chang_chun, 0.01f, new Dictionary<string, float>()
             {
-                { S.armor,10 },
-                { S.dodge,10 }
+               
             },"AuthorityTraitGroup");
             TraitAdd(_wu_fa_wu_tian, 0.01f, new Dictionary<string, float>()
             {
-                { S.armor,10 },
-                { S.dodge,10 }
+               
             },"AuthorityTraitGroup");
             TraitAdd(_jiu_tian_xuan_shi, 0.01f, new Dictionary<string, float>()
             {
-                { S.armor,10 },
-                { S.dodge,10 }
+                
             },"AuthorityTraitGroup");
             TraitAdd(_xian_lei, 0.01f, new Dictionary<string, float>()
             {
-                { S.armor,10 },
-                { S.dodge,10 }
+               
             },"AuthorityTraitGroup");
             TraitAdd(_shen_ling, 0.01f, new Dictionary<string, float>()
             {
-                { S.armor,10 },
-                { S.dodge,10 }
+               
             },"AuthorityTraitGroup");
             TraitAdd(_bai_hui, 0.01f, new Dictionary<string, float>()
             {
-                { S.armor,10 },
-                { S.dodge,10 }
+               
             },"AuthorityTraitGroup");
             TraitAdd(_you_du_shen_dun, 0.01f, new Dictionary<string, float>()
             {
-                { S.armor,10 },
-                { S.dodge,10 }
+              
             },"AuthorityTraitGroup");
             
             TraitAdd(_sheng_ling, 0.001f, new Dictionary<string, float>()
             {
                 {Stats.mod_talent.id,50f}
-            },"BornTraitGroupBornTraitGroup");
+            },"BornTraitGroup");
             
             TraitAdd(_gu_rou_xiang_lian, 0.01f, new Dictionary<string, float>()
             {
@@ -261,63 +248,51 @@ namespace ZheTian.content
             },"AuthorityTraitGroup");
             TraitAdd(_xian_zhe, 0.01f, new Dictionary<string, float>()
             {
-                { S.armor,10 },
-                { S.dodge,10 }
+              
             },"AuthorityTraitGroup");
             TraitAdd(_bai_jie_qian_jie, 0.01f, new Dictionary<string, float>()
             {
-                { S.armor,10 },
-                { S.dodge,10 }
+             
             },"AuthorityTraitGroup");
             TraitAdd(_jian_shen, 0.01f, new Dictionary<string, float>()
             {
-                { S.armor,10 },
-                { S.dodge,10 }
+               
             },"AuthorityTraitGroup");
             TraitAdd(_wu_dao_tong_tian, 0.01f, new Dictionary<string, float>()
             {
-                { S.armor,10 },
-                { S.dodge,10 }
+                
             },"AuthorityTraitGroup");
             TraitAdd(_jing_gang_bu_huai, 0.01f, new Dictionary<string, float>()
             {
-                { S.armor,10 },
-                { S.dodge,10 }
+               
             },"AuthorityTraitGroup");
             TraitAdd(_wan_jie_bu_fu, 0.01f, new Dictionary<string, float>()
             {
-                { S.armor,10 },
-                { S.dodge,10 }
+                
             },"AuthorityTraitGroup");
             TraitAdd(_tian_fu, 0.01f, new Dictionary<string, float>()
             {
-                { S.armor,10 },
-                { S.dodge,10 }
+              
             },"AuthorityTraitGroup");
             TraitAdd(_bu_zhou_feng, 0.01f, new Dictionary<string, float>()
             {
-                { S.armor,10 },
-                { S.dodge,10 }
+               
             },"AuthorityTraitGroup");
             TraitAdd(_ying_yang_tong_yuan, 0.01f, new Dictionary<string, float>()
             {
-                { S.armor,10 },
-                { S.dodge,10 }
+               
             },"AuthorityTraitGroup");
             TraitAdd(_zhen_shen, 0.01f, new Dictionary<string, float>()
             {
-                { S.armor,10 },
-                { S.dodge,10 }
+                
             },"AuthorityTraitGroup");
             TraitAdd(_liu_shi_cha_na, 0.01f, new Dictionary<string, float>()
             {
-                { S.armor,10 },
-                { S.dodge,10 }
+                
             },"AuthorityTraitGroup");
             TraitAdd(_mou_chang_jie_duan, 0.01f, new Dictionary<string, float>()
             {
-                { S.armor,10 },
-                { S.dodge,10 }
+                
             },"AuthorityTraitGroup");
         }
 
