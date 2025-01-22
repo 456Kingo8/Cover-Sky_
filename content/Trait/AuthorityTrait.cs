@@ -81,7 +81,7 @@ namespace ZheTian.content
 
             TraitAdd(_dou_zhan_tian_di,0.01f, new Dictionary<string, float>()
             {
-                { S.mod_damage,70 },
+                { S.mod_damage,0.7f },
                 { S.mod_armor,0.01f }
             },"AuthorityTraitGroup");
 
