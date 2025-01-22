@@ -13,7 +13,7 @@ using System;
 
 namespace ZheTian.content
 {
-    internal class Patches
+    internal class PatcheActor
     {
         private static bool _initialized;
         
@@ -53,7 +53,7 @@ namespace ZheTian.content
             var add_codes = new List<CodeInstruction>
         {
             new(OpCodes.Ldarg_0),
-            new(OpCodes.Call, AccessTools.Method(typeof(Patches), nameof(addition_stats)))
+            new(OpCodes.Call, AccessTools.Method(typeof(PatcheActor), nameof(addition_stats)))
         };
             list[addition_stats_idx].MoveLabelsTo(add_codes[0]);
             list.InsertRange(addition_stats_idx, add_codes);

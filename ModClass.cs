@@ -13,7 +13,7 @@ namespace ZheTian
     public class ModClass : BasicMod<ModClass>, IReloadable
     {
         internal const string asset_id_prefix = "StartBoard.custommodt001";
-
+        
         protected override void OnModLoad()
         {
             Config.isEditor = true;
@@ -25,7 +25,8 @@ namespace ZheTian
             
             //开一个新的KingdomAsset，然后设置互相攻击，然后设置和其他国家友好，然后把他们拉到这个国家里
 
-            Harmony.CreateAndPatchAll(typeof(content.Patches));
+            Harmony.CreateAndPatchAll(typeof(content.PatcheActor));
+            Harmony.CreateAndPatchAll(typeof(content.PatchWindowCreatureInfo));
             LogInfo(GetConfig()["Default"]["WhatToSay"].GetValue() as string);
         }
 
