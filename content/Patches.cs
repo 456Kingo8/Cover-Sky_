@@ -86,9 +86,9 @@ namespace ZheTian.content
             obj1.GetComponent<Text>().font = LocalizedTextManager.currentFont;
         }
         
-        [HarmonyPostfix]
+        [HarmonyPrefix]
         [HarmonyPatch(typeof(Actor), nameof(Actor.getHit))]
-        private static void Actor_getHit_postfix(Actor __instance,float pDamage, BaseSimObject pAttacker = null)
+        private static void Actor_getHit_prefix(Actor __instance, ref float pDamage, BaseSimObject pAttacker = null)
         {
             // 实现攻击免伤
             if (pAttacker != null && pAttacker.isActor())
