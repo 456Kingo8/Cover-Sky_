@@ -1,4 +1,7 @@
-﻿namespace ZheTian.content;
+﻿using System.Diagnostics;
+using UnityEngine;
+
+namespace ZheTian.content;
 
 public class ZheTianGodPowers
 {
@@ -15,4 +18,6 @@ public class ZheTianGodPowers
         power.toggle_name = "ZheTianGodPowerToggle";
         AssetManager.powers.add(power);
     }
+
+
 }

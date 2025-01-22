@@ -1,5 +1,9 @@
 ﻿using System.Collections.Generic;
+using System.Diagnostics;
+using NeoModLoader.api.attributes;
+using NeoModLoader.General;
 using NeoModLoader.General.UI.Tab;
+using UnityEngine;
 
 namespace ZheTian.content;
 
@@ -10,6 +14,7 @@ public class ZheTianTab
     public const string CREATURE = "creature";
     public static PowersTab tab;
     
+    [Hotfixable]
     public static void Init()
     {
         tab = TabManager.CreateTab("zhe_tian", "tab_zhe_tian", "hotkey_tip_tab_other",
@@ -23,10 +28,15 @@ public class ZheTianTab
         });
         
         // 向标签页添加按钮.
-        //_addButtons();
+        _addButtons();
         // 更新标签页的布局.
         tab.UpdateLayout();
     }
 
-    
+    private static void _addButtons()
+    {
+        tab.AddPowerButton(DISPLAY,PowerButtonCreator.CreateSimpleButton("_hei_an_dong_luan",ZheTianEra.DarkChaosStart,SpriteTextureLoader.getSprite("ui/icons/neomodloader") ) );
+    }
+
+
 }
