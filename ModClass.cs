@@ -20,6 +20,7 @@ namespace ZheTian
             new Stats().Init();
             new Trait().Init();
             ZheTianTab.Init();
+            ZheTianEra.init();
             ZheTianGodPowers.init();
             
             //开一个新的KingdomAsset，然后设置互相攻击，然后设置和其他国家友好，然后把他们拉到这个国家里

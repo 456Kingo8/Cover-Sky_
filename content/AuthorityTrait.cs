@@ -60,6 +60,7 @@ namespace ZheTian.content
         public static ActorTrait _zhen_shen { get; set; }
         public static ActorTrait _liu_shi_cha_na { get; set; }
         public static ActorTrait _mou_chang_jie_duan { get; set; }
+        public static ActorTrait _zhi_zun { get; set; }
         
         public void InitAuthorityTrait()
         {
@@ -293,6 +294,12 @@ namespace ZheTian.content
             TraitAdd(_mou_chang_jie_duan, 0.01f, new Dictionary<string, float>()
             {
                 
+            },"AuthorityTraitGroup");
+
+            TraitAdd(_zhi_zun, 0f, new Dictionary<string, float>()
+            {
+                { S.mod_damage,1f },
+                { S.mod_health,1f }
             },"AuthorityTraitGroup");
         }
 

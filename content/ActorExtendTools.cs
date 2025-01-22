@@ -57,6 +57,19 @@ namespace ZheTian.content
             actor.setStatsDirty();
         }
 
+        public static void SetLevel(this Actor actor,int level)
+        {
+            level = Mathf.Clamp(level,0,12);
+            actor.data.set(cultisys_level_key, level);
+            actor.setStatsDirty();
+        }
+
+        public static void SetTalent(this Actor actor,float talent)
+        {
+            talent = Mathf.Max(talent,0);
+            actor.data.set(talent_key, talent);
+        }
+
         public static float GetTalent(this Actor actor)
         {
             actor.data.get(talent_key, out float talent, -1);
