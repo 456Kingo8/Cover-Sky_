@@ -255,9 +255,10 @@ namespace ZheTian.content
             },"AuthorityTraitGroup");
             TraitAdd(_xian_zhe, 0.01f, new Dictionary<string, float>()
             {
-                {S.influence,60},
+                {S.intelligence,60},
                 {S.diplomacy,60},
-                {S.army,60},
+                {S.warfare,60},
+                {S.stewardship,60},
             },"AuthorityTraitGroup");
             TraitAdd(_bai_jie_qian_jie, 0.01f, new Dictionary<string, float>()
             {
