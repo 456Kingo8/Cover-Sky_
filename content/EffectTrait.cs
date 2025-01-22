@@ -99,23 +99,36 @@ public partial class Trait  : ExtendLibrary<ActorTrait, Trait>
         //太阳神体，攻击附有灼烧
         _tai_yang_shen_ti.action_attack_target = (actor, target, tile) =>
         {
+            ActionLibrary.addBurningEffectOnTarget(actor, target, tile);
             return false;
         };
         
         //太阴神体，攻击附有冰冻
         _tai_yin_shen_ti.action_attack_target = (actor, target, tile) =>
         {
+            if(target.isAlive() && target.isActor() && !target.a.hasTrait("freeze_proof"))
+            {
+                target.addStatusEffect("frozen");
+            }
             return false;
         };
         
         //荒古圣体，攻击附有攻速延缓
         _huang_gu_sheng_ti.action_attack_target = (actor, target, tile) =>
         {
+            if(target.isAlive() && target.isActor() )
+            {
+                target.addStatusEffect("slowness");
+            }
             return false;
         };
         //苍天霸体，攻击可能（10%）引发地震
         _cang_tian_ba_ti.action_attack_target = (actor, target, tile) =>
         {
+            if(Toolbox.randomChance(0.1f))
+            {
+                World.world.earthquakeManager.startQuake(tile);
+            }
             return false;
         };
     }
