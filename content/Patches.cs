@@ -134,7 +134,6 @@ namespace ZheTian.content
                     if (!__instance.hasTrait("_di_lu_zheng_feng"))
                     {
                         __instance.addTrait("di_lu_zheng_feng");
-                        //__instance.addTrait("madness");
                     }
                 }
                     // __instance.removeTrait("di_lu_zheng_feng");

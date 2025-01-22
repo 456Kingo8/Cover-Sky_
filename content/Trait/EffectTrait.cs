@@ -116,7 +116,7 @@ public partial class Trait  : ExtendLibrary<ActorTrait, Trait>
         //荒古圣体，攻击附有攻速延缓
         _huang_gu_sheng_ti.action_attack_target = (actor, target, tile) =>
         {
-            if(target.isAlive() && target.isActor() )
+            if(target.isAlive() && target.isActor())
             {
                 target.addStatusEffect("slowness");
             }
@@ -155,6 +155,4 @@ public partial class Trait  : ExtendLibrary<ActorTrait, Trait>
         actor.updateStats(); // 更新角色状态
         return null;
     }
-
-
 }
