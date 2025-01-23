@@ -104,7 +104,43 @@ namespace ZheTian.content
                 }
             }
         }
-        
+
+        [HarmonyPostfix]
+        [HarmonyPatch(typeof(Actor), nameof(Actor.getHit))]
+        private static void Actor_getHit_postfix(Actor __instance, BaseSimObject pAttacker = null)
+        {
+            // 此处判定取消僵直
+            float physique = __instance.GetComponent<Actor>().GetPhysique();
+            if (physique >= 4)
+            {
+                __instance.timer_action = 0;
+            }
+            else
+            {
+                __instance.timer_action -= (float)(physique * 0.004d);
+            }
+        }
+
+        [Hotfixable]
+        [HarmonyPrefix]
+        [HarmonyPatch(typeof(ActorBase), nameof(ActorBase.addForce))]
+        private static bool Actor_addForce_prefix(ActorBase __instance,ref float pX,ref float pY, ref float pZ)
+        {
+            float physique = __instance.GetComponent<Actor>().GetPhysique();
+            // 此处判定降低击退
+            if (physique > 4)
+            {
+                return false;
+            }
+            else if(physique != 0)
+            {
+                pX /= physique * 2;
+                pY /= physique * 2;
+                pZ /= physique * 2;
+            }
+            return true;
+        }
+
         [Hotfixable]
         [HarmonyPostfix]
         [HarmonyPatch(typeof(Actor), nameof(Actor.updateAge))]

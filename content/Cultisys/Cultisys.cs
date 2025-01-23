@@ -143,6 +143,7 @@ namespace ZheTian.content
             stats = _level_stats[12];
             stats[Stats.zheTianAir.id] = 550; 
             stats[Stats.zheTianAir_regen.id] = 11; 
+            stats[Stats.physique.id] = 5;
             stats[S.health] = Factorial(8) * 100; 
             stats[S.damage] = 100000; 
             stats[S.max_age] = 9000;

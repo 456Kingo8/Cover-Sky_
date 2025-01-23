@@ -21,6 +21,8 @@ namespace ZheTian.content
         //修炼速度
         public static BaseStatAsset mod_talent { get; private set; }
 
+        //修炼速度
+        public static BaseStatAsset physique { get; private set; }
 
         protected override void OnInit()
         {

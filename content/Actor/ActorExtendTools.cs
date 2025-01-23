@@ -35,7 +35,11 @@ namespace ZheTian.content
             actor.data.get(Stats.mod_talent.id,out float mod_talent);
             return mod_talent + actor.stats[Stats.mod_talent.id];
         }
-
+        public static float GetPhysique(this Actor actor)
+        {
+            actor.data.get(Stats.physique.id,out float physique);
+            return physique + actor.stats[Stats.physique.id];
+        }
         public static void IncExp(this Actor actor, float value)
         {
             actor.data.set(exp_key, actor.GetExp() + value);
@@ -76,6 +80,7 @@ namespace ZheTian.content
             if (talent < 0)
             {
                 actor.data.set(Stats.mod_talent.id,1f);
+                actor.data.set(Stats.physique.id,0f);
                 if (actor.asset.isBoat)
                 {
                     talent = 0;
