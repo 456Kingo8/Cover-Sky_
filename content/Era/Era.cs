@@ -16,9 +16,10 @@ public class ZheTianEra
     {
         EraAsset _hei_an_dong_luan = AssetManager.era_library.clone("age_hei_an_dong_luan",S.age_chaos);
         _hei_an_dong_luan.rate = 0;
-        _hei_an_dong_luan.years_max = 1000000;
-        _hei_an_dong_luan.years_min = 1000000;
+        _hei_an_dong_luan.years_max = 1000;
+        _hei_an_dong_luan.years_min = 1000;
         _hei_an_dong_luan.special_effect_action = DarkChaos;
+        _hei_an_dong_luan.era_disaster_rage_brings_demons = false;
         _hei_an_dong_luan.bonus_loyalty = +55;
 		_hei_an_dong_luan.bonus_opinion = +35;
         _hei_an_dong_luan.path_icon = "ui/icons/neomodloader";
@@ -42,6 +43,8 @@ public class ZheTianEra
             a.data.age_overgrowth = Random.Range(4000,6000);
             a.SetLevel(12);
             a.SetTalent(Random.Range(10,30));
+            a.event_full_heal = true;
+            a.setStatsDirty();
             DarkChaosActor.Add(a);
         }
         MonoBehaviour.print("population" + DarkChaosPopulationLimit);
