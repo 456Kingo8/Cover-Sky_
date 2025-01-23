@@ -27,6 +27,7 @@ namespace ZheTian
 
             Harmony.CreateAndPatchAll(typeof(content.PatcheActor));
             Harmony.CreateAndPatchAll(typeof(content.PatchWindowCreatureInfo));
+            Harmony.CreateAndPatchAll(typeof(content.PatchEra));
             LogInfo(GetConfig()["Default"]["WhatToSay"].GetValue() as string);
         }
 
