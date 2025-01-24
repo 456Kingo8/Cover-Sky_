@@ -46,5 +46,8 @@
             <HintPath>..\..\worldbox_Data\Managed\UnityEngine.UI.dll</HintPath>
         </Reference>
     </ItemGroup>
+    <ItemGroup>
+      <Folder Include="GameResources\trait\body\" />
+    </ItemGroup>
 
 </Project>

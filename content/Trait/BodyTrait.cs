@@ -43,18 +43,18 @@ namespace ZheTian.content
             {
                 { S.mod_health,0.05f },
                 { S.mod_armor,0.01f },
-            },"BodyTraitGroup");
+            },"BodyTraitGroup",0.8f,"trait/body/C-凡骨");
             
             TraitAdd(_shen_wang_ti, 0.03f, new Dictionary<string, float>()
             {
                 { S.mod_damage,0.3f },
                 { S.mod_armor,0.03f },
-            },"BodyTraitGroup");
+            },"BodyTraitGroup",0.01f,"trait/body/C-神王体");
 
             TraitAdd(_yuan_lin_ti,0.03f, new Dictionary<string, float>()
             {
                 { Stats.mod_talent.id,10f }
-            },"BodyTraitGroup");
+            },"BodyTraitGroup",0.001f,"trait/body/C-元灵体");
             
             TraitAdd(_xian_tian_dao_tai,0.005f, new Dictionary<string, float>()
             {
@@ -95,7 +95,7 @@ namespace ZheTian.content
                 { S.mod_health, 0.5f },
                 { S.mod_damage, 0.5f },
                 { S.mod_armor, 0.05f }
-            },"BodyTraitGroup");
+            },"BodyTraitGroup", 0.001f,"trait/body/C-虚空体");
 
             TraitAdd(_tian_yao_ti,0.01f, new Dictionary<string, float>()
             {
