@@ -62,7 +62,7 @@ namespace ZheTian.content
                 { S.mod_damage, 0.8f },
                 { S.mod_armor, 0.07f },
                 { Stats.mod_talent.id, 0.3f }
-            },"BodyTraitGroup");
+            },"BodyTraitGroup",0.001f,"trait/body/C--先天道胎");
             
             TraitAdd(_huang_gu_sheng_ti, 0.005f, new Dictionary<string, float>()
             {
@@ -102,21 +102,21 @@ namespace ZheTian.content
                 { S.mod_health, 0.5f },
                 { S.mod_damage, 0.5f },
                 { S.mod_armor, 0.05f }
-            },"BodyTraitGroup");
+            },"BodyTraitGroup",0.001f,"trait/body/C--天妖体");
 
             TraitAdd(_tai_yang_shen_ti, 0.01f, new Dictionary<string, float>()
             {
                 { S.mod_health, 0.5f },
                 { S.mod_damage, 0.5f },
                 { S.mod_armor, 0.05f }
-            },"BodyTraitGroup");
+            },"BodyTraitGroup",0.001f,"trait/body/C--太阳神体");
 
             TraitAdd(_tai_yin_shen_ti,0.01f, new Dictionary<string, float>()
             {
                 { S.mod_health, 0.5f },
                 { S.mod_damage, 0.5f },
                 { S.mod_armor, 0.05f }
-            },"BodyTraitGroup");
+            },"BodyTraitGroup",0.001f,"trait/body/C--太阴神体");
         }
 
         public static void TraitAdd(ActorTrait trait, float birth, Dictionary<string, float> statDictionary,string group, float inherit = 0,string path_icon = "ui/icons/neomodloader")
