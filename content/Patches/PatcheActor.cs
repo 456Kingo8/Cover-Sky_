@@ -69,14 +69,20 @@ namespace ZheTian.content
             if (!_initialized)
             {
                 _initialized = true;
-                var obj = new GameObject("TempInfo", typeof(Text), typeof(ContentSizeFitter));
+                var obj = new GameObject("ZheTianInfo", typeof(Text), typeof(ContentSizeFitter));
                 obj.transform.SetParent(__instance.transform.Find("Background"));
                 //obj.transform.position = new Vector3 (1380,500,300);
-                obj.transform.localPosition = new(10180,0,100);
+                //obj.transform.localPosition = new(10180,0,100);
                 obj.transform.localScale = Vector3.one;
-                obj.GetComponent<RectTransform>().sizeDelta = new Vector2(20000, 100);
+                RectTransform rect = obj.GetComponent<RectTransform>();
+                
+                rect.pivot = new Vector2(0f, 1f);
+                rect.anchorMax = new Vector2(0.5f, 1f);
+                rect.anchorMin = new Vector2(0.5f, 1f);
+                rect.localPosition = new Vector3(-50,155,0);
+                rect.sizeDelta = new Vector2(20000, 100);
             }
-            var obj1 = __instance.transform.Find("Background/TempInfo");
+            var obj1 = __instance.transform.Find("Background/ZheTianInfo");
 
             obj1.GetComponent<Text>().text = "当前境界：" + Cultisys.GetName(level) +
                     "\n修炼进度:" + __instance.actor.GetExp() + "/" + Cultisys.LevelExpRequired[level] +
