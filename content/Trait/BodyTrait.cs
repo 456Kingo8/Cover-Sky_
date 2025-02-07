@@ -69,26 +69,26 @@ namespace ZheTian.content
                 { S.mod_health, 0.8f },
                 { S.mod_damage, 0.8f },
                 { S.mod_armor, 0.07f }
-            },"BodyTraitGroup");
+            },"BodyTraitGroup",0.001f,"trait/body/C--荒古圣体");
             
             TraitAdd(_cang_tian_ba_ti,0.005f, new Dictionary<string, float>()
             {
                 { S.mod_health, 0.8f },
                 { S.mod_damage, 0.8f },
                 { S.mod_armor, 0.07f }
-            },"BodyTraitGroup");
+            },"BodyTraitGroup",0.001f,"trait/body/C--苍天霸体");
             
             TraitAdd(_hun_dun_ti, 0.0001f, new Dictionary<string, float>()
             {
                 { S.mod_health, 1.2f },
                 { S.mod_damage, 1.2f },
                 { S.mod_armor, 0.1f }
-            },"BodyTraitGroup");
+            },"BodyTraitGroup",0.001f,"trait/body/C--混沌体");
             
             TraitAdd(_xian_tian_sheng_ti_dao_tai, 0.01f, new Dictionary<string, float>()
             {
                 { S.health,100 }
-            },"BodyTraitGroup");
+            },"BodyTraitGroup",0.001f,"trait/body/C--先天圣体道胎");
 
             TraitAdd(_xu_kong_zhi_ti,0.01f, new Dictionary<string, float>()
             {
